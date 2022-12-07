@@ -1,6 +1,6 @@
 ## README
 
-The files will allow you to run Stata and R code from external editors, such as Sublime Text 3, Notepad++, and Visual Studio Code.
+The files allow you to run Stata and R code from external editors, such as Sublime Text 3, Notepad++, and Visual Studio Code.
 
 (I linked Atom to Stata as well, but I don't really recommend Atom. The major drawback is it can be often unresponsive, and technical glitches occur too often).
 
