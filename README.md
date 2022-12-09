@@ -30,8 +30,8 @@ There is a great guide linking Stata to Notepad++ by <https://huebler.blogspot.c
 
 ### Stata + Visual Studio Code
 
-I essentially recycled the notepad++ integration procedure by configuring my tweaked rundo and rundolines programmes in the VSCode to run Stata code. See the relevant folder and follow the instructions.
+I essentially recycled the notepad++ integration procedure by configuring my tweaked rundolines programmes in the VSCode to run Stata code. See the relevant folder and follow the instructions.
 
 ## R
 
-Basically, install anaconda for the general ecosystem and use ipython terminal to run R code. Running rmd files need more explanation. To be updated at some point.
+Basically, install anaconda for the general ecosystem and use radian-syntax-supported R terminal to run R code. Running rmd files need more explanation. To be updated at some point.
