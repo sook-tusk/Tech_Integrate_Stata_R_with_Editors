@@ -139,7 +139,7 @@ Open any `do` file and type `display 2-3` three times in separate lines. Highlig
 
 Stata windows opens up fine, but in VSCode, another Output panel pops up. As we cannot disable this, the best way we can get around the problem is to place that Output panel to the bottom of VSCode.
 
-![Output panel at the bottom of VSCode](image/Output_Panel_Bottom.png){alt="Output panel at the bottom of VSCode"}
+![](image/Output_Panel_Bottom.png)
 
 # Integration 3: Stata + Sublime Text 3
 
