@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<NotepadPlus>
+    <InternalCommands />
+    <Macros />
+    <UserDefinedCommands>
+        <Command name="Run do-lines" Ctrl="no" Alt="no" Shift="no" Key="120">&quot;C:\Installed_PG\Stata16\ado\personal\rundolines.exe&quot;</Command>
+        <Command name="Run do-file" Ctrl="no" Alt="no" Shift="no" Key="121">&quot;C:\Installed_PG\Stata16\ado\personal\rundo.exe&quot; &quot;$(FULL_CURRENT_PATH)&quot;</Command>
+    </UserDefinedCommands>
+    <PluginCommands>
+        <PluginCommand moduleName="PythonScript.dll" internalID="7" Ctrl="no" Alt="yes" Shift="no" Key="117" />
+        <PluginCommand moduleName="PythonScript.dll" internalID="8" Ctrl="no" Alt="yes" Shift="no" Key="118" />
+    </PluginCommands>
+    <ScintillaKeys />
+</NotepadPlus>

@@ -2,8 +2,6 @@
 
 Stata integration resources are often out of date and scattered. Here, I bring three `modern(ish)` editors for coding. This will help you run Stata code from `modern(ish)` external editors, such as Sublime Text 3, Notepad++, and Visual Studio Code.
 
-(I linked Atom to Stata as well, but I don't really recommend Atom. The major drawback is it can be often unresponsive, and technical glitches occur too often).
-
 *Future work: R integration to be updated. Due to its complexity, only a brief guidance is provided at the moment.*
 
 Download Sublime Text 3 (32 bit) Build 3211 (<https://www.sublimetext.com/3>), Notepad++(<https://notepad-plus-plus.org/downloads/>), and Visual Studio Code (<https://code.visualstudio.com/>). Sublime Text 3 *needs to be 32 bit* due to various compatibility issues in Windows PC. So it is important to remember. For Notepad++ and Visual Studio Code, any latest version should be fine.
@@ -44,9 +42,11 @@ I have a light theme dedicated to run Stata code in Sublime Text 3. My customise
 
 # INSTRUCTIONS BEGINE HERE
 
+Click on the green button, Code, and select Download ZIP. Unzip it and follow the instructions below.
+
 In terms of complexity and effort for integration, Visual Studio Code may be the easiest. I assume Stata is already installed in your PC.
 
-# Integration 1: Stata + Notepad++
+# Integration 1: Stata 16 + Notepad++
 
 ## Step 1: Install Notepad++
 
@@ -54,39 +54,31 @@ Notepad++ is freely available but only in Windows PC. It is not modern but it is
 
 ## Step 2: Save "rundolines"
 
-Unzip the rundolines.7z folder. (To unzip, you need 7-zip. Download 7-zip free here <https://www.7-zip.org/>). The folder contains rundolines programmes (As Huebler advises, *rundo* programme is not needed) . These were originally developed by Friedrich Huebler and I tweaked so that the focus is back to the editor.
+Locate the "rundolines" folder under `Stata_notepad++_setup` folder. The "rundolines" folder contains rundolines programmes and the user-settings file, `rundolines.ini`. These were originally developed by Friedrich Huebler and I tweaked so that the focus is back to the editor.
 
-All files will be placed under: `C:/ado/personal/`
+Two files will be placed under: `C:/yourfolder/Stata16/ado/personal/`
 
-To do so, in C drive, create **ado** and **personal** folders. ![](image/Location.png)
+Please create **ado** and **personal** folders as necessary. ![](image/rundolines_new.png)
 
-Then, put the unzipped files as shown above. Check your Stata version and path. These settings are defined in the *rundolines.ini* file. Open this *ini* file and customise the settings according to your system settings. For example, in `INI` file, I have Stata 14, MP and the version 14.2 as viewed in Notepad++ .
-
-![](image/rundolines_ini.png)
-
-In my experience, *only* these lines need customising to make it work.
+Open the *ini* file and customise the Stata version and path.
 
 I usually create a backup .ini file by renaming it as `rundolines_raw.ini` for future reference, while keeping the current customised version of .ini file.
 
 ## Step 3: Set Notepad++ to run Stata code
 
-The next step is set Notepad++ to add Stata in the programming language list and set a shortcut to run the Stata code.
-
-### A. Install "xml" to highlight Stata syntax.
-
-First of all, Notepad++ should recognise the Stata programming language and highlight the syntax with pre-defined colours. I forgot where I downloaded from, but anyway, I have the user-contributed xml file. I created a zip file with other style files. Unzip `userDefineLang_notepad++.7z` and save it here:
+The next step is set Notepad++ to add Stata in the programming language list and set a shortcut to run the Stata code. Under the `Stata_notepad++_setup` folder, you'll see the folder, `userDefineLangs`, and other xml files including shortcuts. Select all of these and place them here:
 
 > C:\\Users\\username\\AppData\\Roaming\\Notepad++\\
 
-### B. To run the code, we define the shortcuts.
+To get the shortcut to work correctly, you also need to ensure the `rundolines.exe` path. Open `shortcuts.xml` and customise as needed. ![](image/Notepad++_rundolines_path.png)
 
-See Friedrich Huebler's blog <https://huebler.blogspot.com/2008/04/stata.html> for this step.
+Currently, F9 is set to run the Stata code from Notepad++. You can change the shortcuts in Notepad++'s **Run** menu. This should work, but if you need additional help, visit Friedrich Huebler's blog: <https://huebler.blogspot.com/2008/04/stata.html>.
 
 ## Step 4: All done. Test it.
 
 Open any `do` file and test running some Stata code.
 
-# Integration 2: Stata + Visual Studio Code
+# Integration 2: Stata 16 + Visual Studio Code
 
 ## Step 1: Install VSCode
 
@@ -94,7 +86,7 @@ VSCode (Download here <https://code.visualstudio.com/>) is open source and freel
 
 ## Step 2: Save "rundolines"
 
-If you have done so already, skip this step. If you haven't, see Integration 1: Stata + Notepad++ above.
+If you have done so already, skip this step. If you haven't, see Integration 1: Stata 16 + Notepad++ above.
 
 ## Step 3: Set VSCode to run Stata code
 
@@ -112,32 +104,30 @@ On the left-hand side, you'll see an icon for Extensions. Search for *Stata Enha
 
 As *Code Runner* can run many programming languages, we need to ensure Stata is included in the settings. To do so, we need to open VSCode settings json file. Press F1. This triggers an empty window. This is called Command Palette. The cursor is waiting for a command. Start typing "Open User Settings (JSON)", and press enter. In settings.json file, along with other VSCode settings, include code-runner configuration as below.
 
-          {
-            "workbench.colorTheme": "One Dark Pro",
-            "code-runner.executorMap": {
-                "stata": "C:\\ado\\personal\\rundolines.exe",
-                "autoit": "autoit3",
-                "javascript": "node",
-            },
-            "code-runner.executorMapByFileExtension": {
-                ".do": "stata",
-            },
-            "code-runner.executorMapByGlob": {
-                "pom.xml": "cd $dir && mvn clean package"
-            },
-            "code-runner.saveFileBeforeRun": true,
-            "code-runner.showExecutionMessage": false,
-          }
+```         
+      {
+        "workbench.colorTheme": "One Dark Pro",
+        "code-runner.executorMap": {
+            "stata": "C:\\Installed_PG\\Stata16\\ado\\personal\\rundolines.exe",
+
+        },
+        "code-runner.executorMapByFileExtension": {
+            ".do": "stata",
+        },
+        "code-runner.saveFileBeforeRun": true,
+        "code-runner.showExecutionMessage": false,
+      }
+```
 
 As I am not planning on using other programming languages, I simplified the configuration as above.
 
 ## Step 4: All done. Test it.
 
-Open any `do` file and type `display 2-3` three times in separate lines. Highlight the line of code and press `Ctrl+Alt+A` (No need to highlight if you run a single line of code). Alternatively, you can right click to bring the menu, `Run Code`. You may change the keyboard shortcut as you wish later.
+Open any `do` file and type `display 2-3` three times in separate lines. Highlight the line of code and press `Ctrl+Alt+A` (No need to highlight if you run a single line of code). Alternatively, you can right click to bring the menu, `Run Code`. You may change the keyboard shortcut as you wish. Press F1 \> Open Keyboard Shortcuts \> type Run code. Change the shortcut as desired.
 
 ## Known issues
 
-Stata windows opens up fine, but in VSCode, another Output panel pops up. As we cannot disable this, the best way we can get around the problem is to place that Output panel to the bottom of VSCode.
+Stata windows opens up fine, but in VSCode, another Output panel pops up. As we cannot disable this, the best way we can get around the problem is to place that Output panel to the bottom or right of VSCode.
 
 ![](image/Output_Panel_Bottom.png)
 
@@ -153,29 +143,31 @@ Check the excellent resource: <https://packagecontrol.io/packages/StataEditor> t
 
 As we did earlier with rundolines.ini file, we ensure Sublime Text recognises your Stata version and path. In Sublime Text menu, go to `Preferences > Package Settings > Stata Editor > Settings - User` to open the user customisation file. Copy below or edit as necessary.
 
-    {
-        "ensure_newline_at_eof_on_save": true,
+```         
+{
+    "ensure_newline_at_eof_on_save": true,
 
-        "stata_path": "C:/Program Files (x86)/Stata14/StataMP-64.exe",
-        "stata_version": 14,
+    "stata_path": "C:/Program Files (x86)/Stata14/StataMP-64.exe",
+    "stata_version": 14,
 
-        // "stata_path": "C:/Installed_PG/StataIC-64.exe",
-        // "stata_version": 16,
+    // "stata_path": "C:/Installed_PG/StataIC-64.exe",
+    // "stata_version": 16,
 
-        "file_completions": false,
-        "function_completions": true,
-        "variable_completions": true,
-        "waiting_time": 0.7,
-        "character_encoding": "windows-1252",
-        "command_completions": true,
-        "default_path": "project_path",
-        "extensions":
-        [
-            "do",
-            "txt"
-        ],
-        // "color_scheme": "Packages/User/Color Highlighter/themes/SK_Stata_markdown.tmTheme"
-    }
+    "file_completions": false,
+    "function_completions": true,
+    "variable_completions": true,
+    "waiting_time": 0.7,
+    "character_encoding": "windows-1252",
+    "command_completions": true,
+    "default_path": "project_path",
+    "extensions":
+    [
+        "do",
+        "txt"
+    ],
+    // "color_scheme": "Packages/User/Color Highlighter/themes/SK_Stata_markdown.tmTheme"
+}
+```
 
 There are quite a lot of lines, but the most important thing is the path and the version of Stata. I jump between Stata versions so I disabled Stata 16 and activated Stata 14. The last line concerns colour scheme. See *Optional* stage for more detail. I disabled it for now.
 
@@ -209,6 +201,20 @@ See the sub-folder of the repository to see the Colour Scheme file and follow th
 
 You can do so! As I have two versions of Stata, I set Sublime Text 3 to run Stata 14, while Visual Studio Code interacting with Stata 16 (by editing ini file accordingly). The benefit is huge as Stata 14 lacks many options (e.g., current line highlighting, gutter-colour options, etc). Sublime Text will take care of all these.
 
+If you are using multiple versions, it's best to place `rundolines.exe` along with Stata exe file as `C:yourpath\Stata16\rundolines.exe`. After recent Windows Updates, I needed to change as above to get VSCode to run Stata code accordingly. Be cautious of
+
+# System directory 
+
+Your default PERSONAL System directory may be:
+```
+ PERSONAL:  c:\ado\personal\
+```
+I use above for Stata14. For Stata16, I use a different directory by customising as below (to avoid conflicts and issues arising from different versions of Stata. This was the case after a recent series of Windows PC updates). To make the change permanently, define the customised path in the `profile.do`.
+```
+ PERSONAL:  C:Installed_PG\Stata16\ado\personal\
+```
+The `profile.do` can be placed under `C:Installed_PG\Stata16`. You'll see whenever Stata 16 is launched, Stata will look for profile.do and run the code in the profile.do.
+ 
 # Reference
 
 Huebler (2011). Friedrich Huebler's blog <https://huebler.blogspot.com/2008/04/stata.html>
