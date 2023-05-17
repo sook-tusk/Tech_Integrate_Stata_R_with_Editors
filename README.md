@@ -201,11 +201,11 @@ See the sub-folder of the repository to see the Colour Scheme file and follow th
 
 You can do so! As I have two versions of Stata, I set Sublime Text 3 to run Stata 14, while Visual Studio Code interacting with Stata 16 (by editing ini file accordingly). The benefit is huge as Stata 14 lacks many options (e.g., current line highlighting, gutter-colour options, etc). Sublime Text will take care of all these.
 
-If you are using multiple versions, it's best to place `rundolines.exe` along with Stata exe file as `C:yourpath\Stata16\rundolines.exe`. After recent Windows Updates, I needed to change as above to get VSCode to run Stata code accordingly. Be cautious of
+If you are using multiple versions, it's best to place `rundolines.exe` along with Stata exe file as `C:yourpath\Stata16\rundolines.exe`. After recent Windows Updates, I needed to change as above to get VSCode to run Stata code accordingly. 
 
 # System directory 
 
-Your default PERSONAL System directory may be:
+In Stata, type `sysdir`. Your default PERSONAL System directory may be:
 ```
  PERSONAL:  c:\ado\personal\
 ```
