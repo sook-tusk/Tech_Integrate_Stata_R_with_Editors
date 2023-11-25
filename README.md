@@ -219,13 +219,13 @@ If you are using multiple versions, it's best to place `rundolines.exe` along wi
 
 In Stata, type `sysdir`. Your default PERSONAL System directory may be:
 
-```stata         
+```py         
  PERSONAL:  c:\ado\personal\
 ```
 
 I use above for Stata14. For Stata16, I use a different directory by customising as below (to avoid conflicts and issues arising from different versions of Stata. This was the case after a recent series of Windows PC updates). To make the change permanently, define the customised path in the `profile.do`.
 
-```stata         
+```py         
  PERSONAL:  C:Installed_PG\Stata16\ado\personal\
 ```
 
@@ -235,4 +235,4 @@ The `profile.do` can be placed under `C:Installed_PG\Stata16`. You'll see whenev
 
 Huebler (2011). Friedrich Huebler's blog <https://huebler.blogspot.com/2008/04/stata.html>
 
-Thank you for reading. I hope it helps with your Stata workflow, and ongoing project management! Good luck!
+Thank you for reading. I hope it helps with your Stata workflow, and ongoing project management! 
