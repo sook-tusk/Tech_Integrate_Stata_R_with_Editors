@@ -1,0 +1,47 @@
+
+//============== Stata - ST3 ===================
+// Stata shortcuts, in StataEditor
+// remap StataEditor to mimic SendCode
+// ctrl+d runs the current line and move to the
+// next line (ST3 only)
+  {
+    "keys": ["ctrl+d"],
+    "command": "multicommand",
+    "args": {
+      "commands": [
+        {
+          "command": "stata_execute",
+          "args": {"Mode": "do", "Selection": "line"},
+        },
+        {
+          "command": "move_to",
+          "args": {"to": "hardeol"},
+        },
+        {
+          "command": "move",
+          "args": {"by": "lines", "forward": true},
+        },
+        {
+          "command": "move_to",
+          "args": {"to": "hardbol"},
+        },
+      ],
+    },
+    "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "source.stata" }
+    ],
+  },
+
+// Run all lines of code in an entire file: ctrl+alt+d
+  {
+    "keys": ["ctrl+alt+d"],
+    "command": "stata_execute",
+    "args": {"Mode": "do", "Selection": "default"},
+    "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "source.stata" }
+    ],
+  },
+
+]

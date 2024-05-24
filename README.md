@@ -2,7 +2,8 @@
 
 Stata integration resources are often out of date and scattered. Here, I bring three `modern(ish)` editors for coding. This will help you run Stata code from `modern(ish)` external editors, such as Sublime Text 3, Notepad++, and Visual Studio Code.
 
-*Updates in Nov 2023: Sublime-R integration has been updated in a separate repository. Please see here (<https://github.com/sook-tusk/Tech_Creative_Workflow_Using_R_and_Sublime>).*
+*Updates in Nov 2023: Sublime Text 4 can run Stata code (tested in Windows PC). See the keymap for ST3 and ST4 under SublimeText-KeyBindings folder in the repository.
+For Sublime-R integration, see a separate repository here (<https://github.com/sook-tusk/Tech_Creative_Workflow_Using_R_and_Sublime>).*
 
 Download Sublime Text 3 (<https://www.sublimetext.com/3>), Notepad++(<https://notepad-plus-plus.org/downloads/>), and Visual Studio Code (<https://code.visualstudio.com/>). Both 32 bit and 64 bit version (in Windows PC) should work. Should you experience any compatibility issues while using earlier Stata versions (e.g., Stata 14), consider the *32 bit* version. For Notepad++ and Visual Studio Code, any latest version should be fine.
 
