@@ -8,7 +8,6 @@
 
 //============ Stata - ST4 begins ===============
 // No need to highlight if the current line is being run.
-// Run a code block: Highlight first, then press alt+d
 // ctrl+d default:, "Selection": "default" -> line
 // selection_only requires current line highlighting!
     { "keys": ["ctrl+d"],    "command": "stata_execute", "args": {"Mode": "do", "Selection": "line"},    "context":
