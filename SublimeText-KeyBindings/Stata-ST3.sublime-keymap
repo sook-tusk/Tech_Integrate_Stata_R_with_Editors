@@ -29,7 +29,8 @@
     },
     "context":
     [
-      { "key": "selector", "operator": "equal", "operand": "source.stata" }
+      { "key": "selector", "operator": "equal", 
+        "operand": "source.stata" }
     ],
   },
 
@@ -37,10 +38,12 @@
   {
     "keys": ["ctrl+alt+d"],
     "command": "stata_execute",
+    // changed. default is "selection_only"
     "args": {"Mode": "do", "Selection": "default"},
     "context":
     [
-      { "key": "selector", "operator": "equal", "operand": "source.stata" }
+      { "key": "selector", "operator": "equal", 
+        "operand": "source.stata" }
     ],
   },
 
