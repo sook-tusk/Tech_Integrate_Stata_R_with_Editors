@@ -3,6 +3,8 @@
 // This could be improved in future. 
 // For now, Ctrl+d can be used to run Stata code in ST4.
 
+{ "keys": ["alt+d"], "command": "duplicate_line" },
+
 // Customise, as Stata uses ctrl+d.
 { "keys": ["ctrl+alt+e"], "command": "find_under_expand" },
 
