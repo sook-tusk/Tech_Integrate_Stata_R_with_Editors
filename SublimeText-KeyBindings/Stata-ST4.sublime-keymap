@@ -1,37 +1,41 @@
 [
 
-// This could be improved in future. 
-// For now, Ctrl+d can be used to run Stata code in ST4.
+// As Stata uses ctrl+d, customise other shortcuts to avoid conflicts.
 
 { "keys": ["alt+d"], "command": "duplicate_line" },
-
-// Customise, as Stata uses ctrl+d.
 { "keys": ["ctrl+alt+e"], "command": "find_under_expand" },
 
-//============ Stata - ST4 begins ===============
+//> ============ Stata - ST4 - Windows ===============
+// This could be improved in future.
+// For now, Ctrl+d can be used to run Stata code in ST4.
+
 // No need to highlight if the current line is being run.
-// ctrl+d default:, "Selection": "default" -> line
+// ctrl+d default:"Selection": "default", changed to->line
+// ST4 thinks "defaults" means an entire code file.
 // selection_only requires current line highlighting!
-    { "keys": ["ctrl+d"],    "command": "stata_execute", "args": {"Mode": "do", "Selection": "line"},    "context":
+    {
+      "keys": ["ctrl+d"],
+      "command": "stata_execute",
+      "args": {"Mode": "do", "Selection": "line"},
+      "context":
         [
-            { "key": "selector", "operator": "equal", "operand": "source.stata" }
+            { "key": "selector", "operator": "equal",
+              "operand": "source.stata" }
         ]
     },
 
 // same as ST3 setting.
 // Run entire code: ctrl+alt+d (No highlights needed)
-// ST4 thinks "defaults" means an entire code file.
-  {
-    "keys": ["ctrl+alt+d"],
-    "command": "stata_execute",
-    // changed. default is "selection_only"
-    "args": {"Mode": "do", "Selection": "default"},
-    "context":
-    [
-      { "key": "selector", "operator": "equal", "operand": "source.stata" }
-    ],
-  },
-
-//============== Stata - ST4 ends =================
+    {
+      "keys": ["ctrl+alt+d"],
+      "command": "stata_execute",
+      // changed. default is "selection_only"
+      "args": {"Mode": "do", "Selection": "default"},
+      "context":
+      [
+        { "key": "selector", "operator": "equal",
+          "operand": "source.stata" }
+      ],
+    },
 
 ]
