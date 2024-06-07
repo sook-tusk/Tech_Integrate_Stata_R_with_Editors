@@ -215,9 +215,9 @@ See the sub-folder of the repository to see the Colour Scheme file and follow th
 # Integration 1: Stata + Sublime Text 4
 Download Sublime Text 4 by visiting here: https://www.sublimetext.com/
 
-In Mac, instead of Stata Editor, we need to install `Stata Improved Editor` package. One may install `Stata Enhanced` but I have not tried this package. 
+In Mac, instead of Stata Editor, we need to install `Stata Improved Editor` package. One may install `Stata Enhanced` but I have not tried this package. See the detailed information here: https://packagecontrol.io/search/stata 
 
-It should work without changing any settings in Sublime.
+It should work without changing any settings in Sublime in Mac.
 Run as you'd normally do by pressing `Ctrl+d` to run Stata code. This triggers to launch Stata, and the output will be printed in Stata window. 
 
 # Integration 2: Stata + Visual Studio Code
