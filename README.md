@@ -210,13 +210,27 @@ See the sub-folder of the repository to see the Colour Scheme file and follow th
 
 ![](image/Saving_Colour_Scheme.png)
 
-# Using multiple versions of Stata
+
+# for Mac users
+# Integration 1: Stata + Sublime Text 4
+Download Sublime Text 4 by visiting here: https://www.sublimetext.com/
+
+In Mac, instead of Stata Editor, we need to install `Stata Improved Editor` package. One may install `Stata Enhanced` but I have not tried this package. 
+
+It should work without changing any settings in Sublime.
+Run as you'd normally do by pressing `Ctrl+d` to run Stata code. This triggers to launch Stata, and the output will be printed in Stata window. 
+
+# Integration 2: Stata + Visual Studio Code
+to be updated.
+
+# Stata Tips
+## Using multiple versions of Stata
 
 You can do so! As I have two versions of Stata, I set Sublime Text 3 to run Stata 14, while Visual Studio Code interacting with Stata 16 (by editing ini file accordingly). The benefit is huge as Stata 14 lacks many options (e.g., current line highlighting, gutter-colour options, etc). Sublime Text will take care of all these.
 
 If you are using multiple versions, it's best to place `rundolines.exe` along with Stata exe file as `C:yourpath\Stata16\rundolines.exe`. After recent Windows Updates, I needed to change as above to get VSCode to run Stata code accordingly.
 
-# System directory
+## System directory
 
 In Stata, type `sysdir`. Your default PERSONAL System directory may be:
 
