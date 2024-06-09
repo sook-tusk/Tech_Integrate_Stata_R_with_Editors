@@ -107,7 +107,7 @@ If you have done so already, skip this step. If you haven't, see Integration 1: 
 
 First of all, VSCode should recognise the Stata programming language and highlight the syntax with pre-defined colours. In VSCode, the user-contributed extension, *Stata Enhanced*, does this job.
 
-On the left-hand side, you'll see an icon for Extensions. Search for *Stata Enhanced* and click `install`. Done.
+On the left-hand side of VSCode menu, you'll see an icon for Extensions. Search for *Stata Enhanced* and click `install`. Done.
 
 ### B. To run the code, we need "Code Runner".
 
@@ -200,7 +200,7 @@ The final step involving Stata Automation type library <https://www.stata.com/au
 
 ## Step 4: All done. Test it.
 
-Open any `do` file and test running some Stata code. Highlight the line of code and press `Ctrl+D`. It is liberating in the sense that there is no need to highlight the current line of code if you run a single line, as in Visual Studio Code. It is very handy when you are testing the code line by line, rather than a block of code. You should expect something like this. Here, you can see Stata output, the full folder tree, and the code side by side.
+Open any `do` file and test running some Stata code. Highlight the block of code and press `Ctrl+D`. It is liberating in the sense that there is no need to highlight the current line of code if you run a single line, as in Visual Studio Code. It is very handy when you are testing the code line by line, rather than a block of code. You should expect something like this. Here, you can see Stata output, the full folder tree, and the code side by side.
 
 ![](image/Stata_Sublime.png)
 
@@ -221,7 +221,39 @@ It should work without changing any settings in Sublime in Mac.
 Run as you'd normally do by pressing `Ctrl+d` to run Stata code. This triggers to launch Stata, and the output will be printed in Stata window. 
 
 # Integration 2: Stata + Visual Studio Code
-to be updated.
+
+# Step 1: Install VSCode extension
+  - Install `Stata Enhanced` by Kyle Barron.
+
+This extension allows Stata code highlights. 
+
+To run Stata code, we need `stataRun`.
+- Install `stataRun` by Yeaoh Media Inc.
+
+You can access Extensions on the left-hand side of VSCode. Locate Extensions among major menu icons. 
+
+# Step 2: Configure VSCode
+Press `fn+F1` (or F1). This triggers an empty window, called Command Palette. The cursor is waiting for a command. Start typing "Open User Settings (JSON)", and press enter to luanch your settings.json file.
+
+In settings.json file, add the following:
+Customise as necessary. Yours may be "stataMP".
+```json
+// ============= Stata ==================
+  "stataRun.whichApp": "stataIC",
+```
+
+# Step 3: Complete. Test running Stata code now
+Restart VSCode.
+Then, open a do file to run. Highlight a code block. There is no need to highlight the current line if you run a single line of code. 
+To run the code, press `Cmd+Shift+S`.
+Customise the shortcut as necessary (to be updated).
+
+# Troubleshoot 
+- If a new instance of Stata window is not triggered, try restarting VSCode several times at each stage.
+
+# Issues
+- The cursor is left in Stata window, not back in VSCode. Can look in future. 
+
 
 # Stata Tips
 ## Using multiple versions of Stata
@@ -251,3 +283,4 @@ The `profile.do` can be placed under `C:Installed_PG\Stata16`. You'll see whenev
 Huebler (2011). Friedrich Huebler's blog <https://huebler.blogspot.com/2008/04/stata.html>
 
 Thank you for reading. I hope it helps with your Stata workflow, and ongoing project management! 
+
