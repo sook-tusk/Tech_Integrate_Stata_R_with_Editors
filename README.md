@@ -220,7 +220,7 @@ Download Sublime Text 4 by visiting here: https://www.sublimetext.com/
 
 In Mac, instead of Stata Editor, we need to install `Stata Improved Editor` package. One may install `Stata Enhanced` but I have not tried this package. See the detailed information here: https://packagecontrol.io/search/stata 
 
-Set the shortcut by accessing the key bindings file.
+Set the shortcut by accessing your key bindings file.
 ```py
 // ===== Mac, Stata - ST4  =====
   {
