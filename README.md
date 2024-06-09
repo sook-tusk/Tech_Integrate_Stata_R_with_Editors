@@ -222,7 +222,7 @@ Run as you'd normally do by pressing `Ctrl+d` to run Stata code. This triggers t
 
 # Integration 2: Stata + Visual Studio Code
 
-# Step 1: Install VSCode extension
+## Step 1: Install VSCode extension
   - Install `Stata Enhanced` by Kyle Barron.
 
 This extension allows Stata code highlights. 
@@ -232,7 +232,7 @@ To run Stata code, we need `stataRun`.
 
 You can access Extensions on the left-hand side of VSCode. Locate Extensions among major menu icons. 
 
-# Step 2: Configure VSCode
+## Step 2: Configure VSCode
 Press `fn+F1` (or F1). This triggers an empty window, called Command Palette. The cursor is waiting for a command. Start typing "Open User Settings (JSON)", and press enter to luanch your settings.json file.
 
 In settings.json file, add the following:
@@ -242,16 +242,16 @@ Customise as necessary. Yours may be "stataMP".
   "stataRun.whichApp": "stataIC",
 ```
 
-# Step 3: Complete. Test running Stata code now
+## Step 3: Complete. Test running Stata code now
 Restart VSCode.
 Then, open a do file to run. Highlight a code block. There is no need to highlight the current line if you run a single line of code. 
 To run the code, press `Cmd+Shift+S`.
 Customise the shortcut as necessary (to be updated).
 
-# Troubleshoot 
+## Troubleshoot 
 - If a new instance of Stata window is not triggered, try restarting VSCode several times at each stage.
 
-# Issues
+## Issues
 - The cursor is left in Stata window, not back in VSCode. Can look in future. 
 
 
