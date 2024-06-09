@@ -47,6 +47,9 @@ Click on the green button, Code, and select Download ZIP. Unzip it and follow th
 
 In terms of complexity and effort for integration, Visual Studio Code may be the easiest. I assume Stata is already installed in your PC.
 
+General principles are similar across platforms. The procedures for Mac users are also shown. See [for Mac users](#macusers)
+
+# In Windows :
 # Integration 1: Stata 16 + Notepad++
 
 ## Step 1: Install Notepad++
@@ -211,7 +214,7 @@ See the sub-folder of the repository to see the Colour Scheme file and follow th
 ![](image/Saving_Colour_Scheme.png)
 
 
-# for Mac users
+# for Mac users <a href="macusers" id="macusers"/>
 # Integration 1: Stata + Sublime Text 4
 Download Sublime Text 4 by visiting here: https://www.sublimetext.com/
 
