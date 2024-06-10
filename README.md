@@ -2,7 +2,8 @@
 
 Stata integration resources are often out of date and scattered. Here, I bring three `modern(ish)` editors for coding. This will help you run Stata code from `modern(ish)` external editors, such as Sublime Text 3, Notepad++, and Visual Studio Code.
 
-*Updates in Nov 2023: Sublime Text 4 can run Stata code (tested in Windows PC). See the keymap for ST3 and ST4 under SublimeText-KeyBindings folder in the repository.
+*Updates in Nov 2023: Sublime Text 4 can run Stata code (tested in Windows PC). See the keymap, [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST3.sublime-keymap) for ST3 and ST4 under `SublimeText-KeyBindings` folder in the repository.
+
 For Sublime-R integration, see a separate repository here (<https://github.com/sook-tusk/Tech_Creative_Workflow_Using_R_and_Sublime>).*
 
 Download Sublime Text 3 (<https://www.sublimetext.com/3>), Notepad++(<https://notepad-plus-plus.org/downloads/>), and Visual Studio Code (<https://code.visualstudio.com/>). Both 32 bit and 64 bit version (in Windows PC) should work. Should you experience any compatibility issues while using earlier Stata versions (e.g., Stata 14), consider the *32 bit* version. For Notepad++ and Visual Studio Code, any latest version should be fine.
@@ -116,7 +117,7 @@ On the left-hand side of VSCode menu, you'll see an icon for Extensions. Search 
 
 *Stata Enhanced* highlights syntax, but running the code is a separate step. For this, we need to install the extension called *Code Runner*. Click on Extension icon and search for *Code Runner* and click `install`.
 
-### C. Change settings for "Code Runner".
+### C. Change USER settings for "Code Runner".
 
 As *Code Runner* can run many programming languages, we need to ensure Stata is included in the settings. To do so, we need to open VSCode settings json file. Press F1. This triggers an empty window. This is called Command Palette. The cursor is waiting for a command. Start typing "Open User Settings (JSON)", and press enter. In settings.json file, along with other VSCode settings, include code-runner configuration as below.
 
@@ -137,9 +138,27 @@ As *Code Runner* can run many programming languages, we need to ensure Stata is 
 
 As I am not planning on using other programming languages, I simplified the configuration as above.
 
+### D. Set a shortcut key, ctrl+d.
+Set as `ctrl+d` to run Stata code (consistent with Sublime).
+
+In VSCode, press `F1 (or fn+F1 in laptops) > type Preferences: Open Keyboard Shortcuts (JSON)` to open the shortcut keys json file. Copy and paste the following at the end of the json file inside the square brackets, `[]`.
+```py 
+[
+
+  // ========= STATA =======
+  {
+    "key": "ctrl+d",
+    "command": "code-runner.run",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'stata'"
+  },
+
+]  
+```
+You may change the keyboard shortcut as you wish. Press F1 \> Open Keyboard Shortcuts \> type Run code. Change the shortcut as desired.
+
 ## Step 4: All done. Test it.
 
-Open any `do` file and type `display 2-3` three times in separate lines. Highlight the line of code and press `Ctrl+Alt+A` (No need to highlight if you run a single line of code). Alternatively, you can right click to bring the menu, `Run Code`. You may change the keyboard shortcut as you wish. Press F1 \> Open Keyboard Shortcuts \> type Run code. Change the shortcut as desired.
+Open any `do` file and type `display 2-3` three times in separate lines. Highlight the line of code and press `Ctrl+d` (No need to highlight if you run a single line of code).
 
 ## Known issues
 
@@ -187,7 +206,12 @@ As we did earlier with rundolines.ini file, we ensure Sublime Text recognises yo
 
 There are quite a lot of lines, but the most important thing is the path and the version of Stata. I jump between Stata versions so I disabled Stata 16 and activated Stata 14. The last line concerns colour scheme. See *Optional* stage for more detail. I disabled it for now.
 
-## Step 3: Register in the Stata Automation type library
+## Step 3: Set shortcuts, ctrl+d
+Access key bindings file by pressing **Ctrl+Shit+P > type Preferences: Key Bindings > Enter**.
+
+To customise your user key bindings file, refer to the example keymap file (In the repository, see [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST3.sublime-keymap) for ST3 located under *SublimeText-KeyBindings* folder. 
+
+## Step 4: Register in the Stata Automation type library
 
 The final step involving Stata Automation type library <https://www.stata.com/automation/#createmsapp> can be tricky. In essence, we request permission from Stata to run the code externally. I had a colleague stuck at this stage, so some screenshots are included. Here are the detailed steps:
 
@@ -201,7 +225,7 @@ The final step involving Stata Automation type library <https://www.stata.com/au
 
 3.  Right-click on the `StataMP-64.exe - Shortcut` again then choose **"Run as administrator"**. This completes registration. Well-done.
 
-## Step 4: All done. Test it.
+## Step 5: All done. Test it.
 
 Open any `do` file and test running some Stata code. Highlight the block of code and press `Ctrl+D`. It is liberating in the sense that there is no need to highlight the current line of code if you run a single line, as in Visual Studio Code. It is very handy when you are testing the code line by line, rather than a block of code. You should expect something like this. Here, you can see Stata output, the full folder tree, and the code side by side.
 
@@ -254,9 +278,10 @@ Customise as necessary. Yours may be "stataMP".
 
 ## Step 3: Complete. Test running Stata code now
 Restart VSCode.
-Then, open a do file to run. Highlight a code block. There is no need to highlight the current line if you run a single line of code. 
+Then, open a do file to run. Highlight a line of code. 
 To run the code, press `Cmd+Shift+S`.
 Customise the shortcut as necessary (to be updated).
+See other default shortcuts here: https://github.com/poidstotal/stataRun
 
 ## Troubleshoot 
 - If a new instance of Stata window is not triggered, try restarting VSCode several times at each stage.
