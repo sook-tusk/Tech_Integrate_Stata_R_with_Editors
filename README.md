@@ -313,6 +313,40 @@ I use above for Stata14. For Stata16, I use a different directory by customising
 
 The `profile.do` can be placed under `C:Installed_PG\Stata16`. You'll see whenever Stata 16 is launched, Stata will look for profile.do and run the code in the profile.do.
 
+# Enable preview for a Stata Do file in Windows File Explorer
+This feature can be very handy for a quick browse in the File Explorer. Essentially, we set Windows to recognise *.do* file as a *.txt* file, instead.
+
+1. In the search bar (located at the bottom left of Windows PC),
+type *Reg* to launch Registry Editor.
+
+2. Look for the extension, .do
+
+You'll see file extensions under:
+> Computer\HKEY_CLASSES_ROOT\.do
+
+3. On the right-hand pane, do the following:
+   right-click > New > String value
+![](image/Preview/new_stringvalue.png)
+
+4. From the default, *New Value #1*,
+   rename as **PerceivedType**.
+![](image/Preview/new_value_default.png)
+
+5. Now, click on **PerceivedType** to
+bring up Modify... menu.
+![](image/Preview/perceivedtype.png)
+
+In the Value data: type *text*.
+![](image/Preview/set_as_text.png)
+
+6. Finally, return to the file explorer and
+hover over a do file. The preview pane should display the Stata code.
+![](image/Preview/do_preview.png)
+
+If this feature stops working after Windows updates, you may need to repeat this process.
+
+Note that syntax highlighting is not supported, and it works with a *personal* Windows PC. Hopefully, .do extension is included in the Windows PC by default one day. Still, for now, it's a significant improvement!
+
 # Reference
 
 Huebler (2011). Friedrich Huebler's blog <https://huebler.blogspot.com/2008/04/stata.html>
