@@ -321,7 +321,7 @@ type *Reg* to launch Registry Editor.
 
 2. Look for the extension, .do
 
-You'll see file extensions under:
+   You'll see file extensions under:
 > Computer\HKEY_CLASSES_ROOT\.do
 
 3. On the right-hand pane, do the following:
