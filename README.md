@@ -329,14 +329,14 @@ type *Reg* to launch Registry Editor.
 ![](image/Preview/new_stringvalue.png)
 
 4. From the default, *New Value #1*,
-   rename as **PerceivedType**.
+   we rename it as **PerceivedType**.
 ![](image/Preview/new_value_default.png)
 
 5. Now, click on **PerceivedType** to
-bring up Modify... menu.
+bring up **Modify**... menu.
 ![](image/Preview/perceivedtype.png)
 
-In the Value data: type *text*.
+      In the Value data: type *text*.
 ![](image/Preview/set_as_text.png)
 
 6. Finally, return to the file explorer and
