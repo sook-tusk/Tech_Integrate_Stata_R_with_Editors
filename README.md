@@ -305,12 +305,16 @@ In Stata, type `sysdir`. Your default PERSONAL System directory may be:
  PERSONAL:  c:\ado\personal\
 ```
 
-I use above for Stata14. For Stata16, I use a different directory by customising as below (to avoid conflicts and issues arising from different versions of Stata. This was the case after a recent series of Windows PC updates). To make the change permanently, define the customised path in the `profile.do`.
+I use above for Stata14. For Stata16, I use a different directory by customising as below (to avoid conflicts and issues arising from different versions of Stata. This was the case after a recent series of Windows PC updates). 
 
-```py         
- PERSONAL:  C:Installed_PG\Stata16\ado\personal\
+```py 
+*===== Define custom sysdir to save ado files ========
+sysdir set PLUS "C:Installed_PG\Stata16\ado\plus"
+
+sysdir set PERSONAL "C:Installed_PG\Stata16\ado\personal"
 ```
 
+To make the change permanently, define the customised path in the `profile.do` (see [Example-Profile.do](profile/profile.do) )
 The `profile.do` can be placed under `C:Installed_PG\Stata16`. You'll see whenever Stata 16 is launched, Stata will look for profile.do and run the code in the profile.do.
 
 # Enable preview for a Stata Do file in Windows File Explorer
