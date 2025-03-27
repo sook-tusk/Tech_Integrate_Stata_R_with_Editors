@@ -314,8 +314,8 @@ sysdir set PLUS "C:Installed_PG\Stata16\ado\plus"
 sysdir set PERSONAL "C:Installed_PG\Stata16\ado\personal"
 ```
 
-To make the change permanently, define the customised path in the `profile.do` (see [Example-Profile.do](profile/profile.do) )
-The `profile.do` can be placed under `C:Installed_PG\Stata16`. You'll see whenever Stata 16 is launched, Stata will look for profile.do and run the code in the profile.do.
+To make the change permanently, define the customised path in the  [profile.do](profile/profile.do)).
+The `profile.do` file can be placed under `C:Installed_PG\Stata16`. You'll see whenever Stata 16 is launched, Stata will look for profile.do and run the code in the profile.do.
 
 # Enable preview for a Stata Do file in Windows File Explorer
 This feature can be very handy for a quick browse in the File Explorer. Essentially, we set Windows to recognise *.do* file as a *.txt* file, instead.
