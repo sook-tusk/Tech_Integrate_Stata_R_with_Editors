@@ -32,15 +32,15 @@ There is a great guide linking Stata to Notepad++ by <https://huebler.blogspot.c
 
 I essentially recycled the notepad++ integration procedure by configuring my tweaked rundolines programmes in the VSCode to run Stata code.
 
-### Stata + Sublime Text 3
+### Stata + Sublime Text 4
 
-Sublime Text (<https://www.sublimetext.com/3>) is stunning and incredibly fast. You'll see Sublime Text just launches in a second. It's beautiful. It's a pure joy!
+Sublime Text (<https://www.sublimetext.com>) is stunning and incredibly fast. You'll see Sublime Text just launches in a second. It's beautiful. It's a pure joy!
 
-I have to admit that Sublime Text has *some* learning curve. First-time users may find Sublime Text overwhelming due to its technical aspects to learn. I think this is totally worth it. Allow yourself to learn at your own pace and learn a keyboard shortcut one at a time. Once you get the hang of using menu options and their corresponding shortcuts, code-writing becomes very fast. Sublime Text has become an indispensable tool for me over years (especially during Covid!) and I highly recommend using it.
+I have to admit that Sublime Text has *some* learning curve. First-time users may find Sublime Text overwhelming due to its technical aspects to learn. I think this is totally worth it. Allow yourself to learn at your own pace and learn a keyboard shortcut one at a time. Once you get the hang of using menu options and their corresponding shortcuts, code-writing becomes very fast. Sublime Text has become an indispensable tool for me over years and I highly recommend using it.
 
 For integration, there is an excellent resource: <https://packagecontrol.io/packages/StataEditor>.
 
-I have a light theme dedicated to run Stata code in Sublime Text 3. My customised light-theme is available in the repository.
+I have a light theme dedicated to run Stata code for Sublime Text 3. My customised light-theme is available in the repository.
 
 # INSTRUCTIONS BEGINE HERE
 
@@ -65,7 +65,7 @@ Two files will be placed under: `C:/yourfolder/Stata18/ado/personal/`
 
 Please create **ado** and **personal** folders as necessary. ![](image/rundolines_new.png)
 
-Open the *ini* file and customise the Stata version and path.
+Open the *ini* file and customise the Stata version and path (the image above shows the settings for Stata 16). 
 
 I usually create a backup .ini file by renaming it as `rundolines_raw.ini` for future reference, while keeping the current customised version of .ini file.
 
@@ -166,15 +166,15 @@ Stata windows opens up fine, but in VSCode, another Output panel pops up. As we 
 
 ![](image/Output_Panel_Bottom.png)
 
-# Integration 3: Stata + Sublime Text 3
+# Integration 3: Stata + Sublime Text 4
 
-## Step 1: Install Sublime Text 3
+## Step 1: Install Sublime Text 4
 
-Download Sublime Text 3 (<https://www.sublimetext.com/3>). It is not completely free but there are ways to get around. There is no fixed time period until purchase so take your time. Supporting the developers is a great idea, too. Sublime Text 4 is available but I stick with Sublime Text 3, as other languages are all set here to run as well.
+Download Sublime Text 4 (<https://www.sublimetext.com>). It is not completely free but there are ways to get around. There is no fixed time period until purchase. Supporting the developers is a great idea, too. 
 
-## Step 2: Install "Stata Editor" package in Sublime Text 3
+## Step 2: Install "Stata Editor" package in Sublime Text 4
 
-Check the excellent resource: <https://packagecontrol.io/packages/StataEditor> to install "Stata Editor" package in Sublime Text 3.
+Check the excellent resource: <https://packagecontrol.io/packages/StataEditor> to install "Stata Editor" package in Sublime Text 4.
 
 As we did earlier with rundolines.ini file, we ensure Sublime Text recognises your Stata version and path. In Sublime Text menu, go to `Preferences > Package Settings > Stata Editor > Settings - User` to open the user customisation file. Copy below or edit as necessary.
 
@@ -185,7 +185,7 @@ As we did earlier with rundolines.ini file, we ensure Sublime Text recognises yo
     "stata_path": "C:/Program Files (x86)/Stata14/StataMP-64.exe",
     "stata_version": 14,
 
-    // "stata_path": "C:/Installed_PG/StataIC-64.exe",
+    // "stata_path": "C:/Installed_PG/Stata18/StataIC-64.exe",
     // "stata_version": 18,
 
     "file_completions": false,
@@ -209,7 +209,7 @@ There are quite a lot of lines, but the most important thing is the path and the
 ## Step 3: Set shortcuts, ctrl+d
 Access key bindings file by pressing **Ctrl+Shit+P > type Preferences: Key Bindings > Enter**.
 
-To customise your user key bindings file, refer to the example keymap file (In the repository, see [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST3.sublime-keymap) for ST3 located under *SublimeText-KeyBindings* folder. 
+To customise your user key bindings file, refer to the example keymap file (In the repository, see [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST4.sublime-keymap) for ST4 located under *SublimeText-KeyBindings* folder. 
 
 ## Step 4: Register in the Stata Automation type library
 
@@ -293,7 +293,7 @@ See other default shortcuts here: https://github.com/poidstotal/stataRun
 # Stata Tips
 ## Using multiple versions of Stata
 
-You can do so! As I have two versions of Stata, I set Sublime Text 3 to run Stata 14, while Visual Studio Code interacting with Stata 18 (by editing ini file accordingly). The benefit is huge as Stata 14 lacks many options (e.g., current line highlighting, gutter-colour options, etc). Sublime Text will take care of all these.
+You can do so! As I have two versions of Stata, I set Sublime Text 4 to run Stata 14, while Visual Studio Code interacting with Stata 18 (by editing ini file accordingly). The benefit is huge as Stata 14 lacks many options (e.g., current line highlighting, gutter-colour options, etc). Sublime Text will take care of all these.
 
 If you are using multiple versions, it's best to place `rundolines.exe` along with Stata exe file as `C:yourpath\Stata18\rundolines.exe`. After recent Windows Updates, I needed to change as above to get VSCode to run Stata code accordingly.
 
