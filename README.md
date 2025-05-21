@@ -1,12 +1,12 @@
 ## Integrate Stata and R with Modern External Editors
 
-Stata integration resources are often out of date and scattered. Here, I bring three `modern(ish)` editors for coding. This will help you run Stata code from `modern(ish)` external editors, such as Sublime Text 3, Notepad++, and Visual Studio Code.
+Stata integration resources are often out of date and scattered. Here, I bring three `modern(ish)` editors for coding. This will help you run Stata code from `modern(ish)` external editors, such as Sublime Text 4, Notepad++, and Visual Studio Code.
 
-*Updates in Nov 2023: Sublime Text 4 can run Stata code (tested in Windows PC). See the keymap, [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST3.sublime-keymap) for ST3 and ST4 under `SublimeText-KeyBindings` folder in the repository.
+*Updates in Nov 2023: You may use earlier versions of Sublime Text to run Stata code (tested in Windows PC). See the keymap, [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST3.sublime-keymap) for ST3 and ST4 under `SublimeText-KeyBindings` folder in the repository.
 
 For Sublime-R integration, see a separate repository here (<https://github.com/sook-tusk/Tech_Creative_Workflow_Using_R_and_Sublime>).*
 
-Download Sublime Text 3 (<https://www.sublimetext.com/3>), Notepad++(<https://notepad-plus-plus.org/downloads/>), and Visual Studio Code (<https://code.visualstudio.com/>). Both 32 bit and 64 bit version (in Windows PC) should work. Should you experience any compatibility issues while using earlier Stata versions (e.g., Stata 14), consider the *32 bit* version. For Notepad++ and Visual Studio Code, any latest version should be fine.
+Download Sublime Text 4 (<https://www.sublimetext.com>), Notepad++(<https://notepad-plus-plus.org/downloads/>), and Visual Studio Code (<https://code.visualstudio.com/>). Both 32 bit and 64 bit version (in Windows PC) should work. Should you experience any compatibility issues while using earlier Stata versions (e.g., Stata 14), consider the *32 bit* version. For Notepad++ and Visual Studio Code, any latest version should be fine.
 
 Once installed, play with them by yourself. Simple googling with get you started with basic functionality (opening a folder tree in the editor, using command palette) fairly quickly. There are many excellent resources online. When you are familiar with basic functionality, go ahead and follow the instructions here that walk you through integrating these fabulous tools with Stata.
 
@@ -51,7 +51,7 @@ In terms of complexity and effort for integration, Visual Studio Code may be the
 General principles are similar across platforms. The procedures for Mac users are also shown. See [for Mac users](#macusers)
 
 # In Windows :
-# Integration 1: Stata 16 + Notepad++
+# Integration 1: Stata 18 + Notepad++
 
 ## Step 1: Install Notepad++
 
@@ -61,7 +61,7 @@ Notepad++ is freely available but only in Windows PC. It is not modern but it is
 
 Locate the "rundolines" folder under `Stata_notepad++_setup` folder. The "rundolines" folder contains rundolines programmes and the user-settings file, `rundolines.ini`. These were originally developed by Friedrich Huebler and I tweaked so that the focus is back to the editor.
 
-Two files will be placed under: `C:/yourfolder/Stata16/ado/personal/`
+Two files will be placed under: `C:/yourfolder/Stata18/ado/personal/`
 
 Please create **ado** and **personal** folders as necessary. ![](image/rundolines_new.png)
 
@@ -95,7 +95,7 @@ You can change the shortcuts in Notepad++'s **Run** menu. This should help with 
 
 Open any `do` file and test running some Stata code by pressing Ctrl+D.
 
-# Integration 2: Stata 16 + Visual Studio Code
+# Integration 2: Stata 18 + Visual Studio Code
 
 ## Step 1: Install VSCode
 
@@ -103,7 +103,7 @@ VSCode (Download here <https://code.visualstudio.com/>) is open source and freel
 
 ## Step 2: Save "rundolines"
 
-If you have done so already, skip this step. If you haven't, see Integration 1: Stata 16 + Notepad++ above.
+If you have done so already, skip this step. If you haven't, see Integration 1: Stata 18 + Notepad++ above.
 
 ## Step 3: Set VSCode to run Stata code
 
@@ -125,7 +125,7 @@ As *Code Runner* can run many programming languages, we need to ensure Stata is 
       {
         "workbench.colorTheme": "One Dark Pro",
         "code-runner.executorMap": {
-            "stata": "C:\\Installed_PG\\Stata16\\ado\\personal\\rundolines.exe",
+            "stata": "C:\\Installed_PG\\Stata18\\ado\\personal\\rundolines.exe",
 
         },
         "code-runner.executorMapByFileExtension": {
@@ -186,7 +186,7 @@ As we did earlier with rundolines.ini file, we ensure Sublime Text recognises yo
     "stata_version": 14,
 
     // "stata_path": "C:/Installed_PG/StataIC-64.exe",
-    // "stata_version": 16,
+    // "stata_version": 18,
 
     "file_completions": false,
     "function_completions": true,
@@ -204,7 +204,7 @@ As we did earlier with rundolines.ini file, we ensure Sublime Text recognises yo
 }
 ```
 
-There are quite a lot of lines, but the most important thing is the path and the version of Stata. I jump between Stata versions so I disabled Stata 16 and activated Stata 14. The last line concerns colour scheme. See *Optional* stage for more detail. I disabled it for now.
+There are quite a lot of lines, but the most important thing is the path and the version of Stata. I jump between Stata versions so I disabled Stata 18 and activated Stata 14. The last line concerns colour scheme. See *Optional* stage for more detail. I disabled it for now.
 
 ## Step 3: Set shortcuts, ctrl+d
 Access key bindings file by pressing **Ctrl+Shit+P > type Preferences: Key Bindings > Enter**.
@@ -293,9 +293,9 @@ See other default shortcuts here: https://github.com/poidstotal/stataRun
 # Stata Tips
 ## Using multiple versions of Stata
 
-You can do so! As I have two versions of Stata, I set Sublime Text 3 to run Stata 14, while Visual Studio Code interacting with Stata 16 (by editing ini file accordingly). The benefit is huge as Stata 14 lacks many options (e.g., current line highlighting, gutter-colour options, etc). Sublime Text will take care of all these.
+You can do so! As I have two versions of Stata, I set Sublime Text 3 to run Stata 14, while Visual Studio Code interacting with Stata 18 (by editing ini file accordingly). The benefit is huge as Stata 14 lacks many options (e.g., current line highlighting, gutter-colour options, etc). Sublime Text will take care of all these.
 
-If you are using multiple versions, it's best to place `rundolines.exe` along with Stata exe file as `C:yourpath\Stata16\rundolines.exe`. After recent Windows Updates, I needed to change as above to get VSCode to run Stata code accordingly.
+If you are using multiple versions, it's best to place `rundolines.exe` along with Stata exe file as `C:yourpath\Stata18\rundolines.exe`. After recent Windows Updates, I needed to change as above to get VSCode to run Stata code accordingly.
 
 ## System directory
 
@@ -305,17 +305,17 @@ In Stata, type `sysdir`. Your default PERSONAL System directory may be:
  PERSONAL:  c:\ado\personal\
 ```
 
-I use above for Stata14. For Stata16, I use a different directory by customising as below (to avoid conflicts and issues arising from different versions of Stata. This was the case after a recent series of Windows PC updates). 
+I use above for Stata14. For Stata18, I use a different directory by customising as below (to avoid conflicts and issues arising from different versions of Stata. This was the case after a recent series of Windows PC updates). 
 
 ```py 
 *===== Define custom sysdir to save ado files ========
-sysdir set PLUS "C:Installed_PG\Stata16\ado\plus"
+sysdir set PLUS     "C:\Installed_PG\Stata18\ado\plus"
 
-sysdir set PERSONAL "C:Installed_PG\Stata16\ado\personal"
+sysdir set PERSONAL "C:\Installed_PG\Stata18\ado\personal"
 ```
 
 To make the change permanently, define the customised path in the  [profile.do](profile/profile.do)).
-The `profile.do` file can be placed under `C:Installed_PG\Stata16`. You'll see whenever Stata 16 is launched, Stata will look for profile.do and run the code in the profile.do.
+The `profile.do` file can be placed under `C:Installed_PG\Stata18`. You'll see whenever Stata 18 is launched, Stata will look for profile.do and run the code in the profile.do.
 
 # Enable preview for a Stata Do file in Windows File Explorer
 This feature can be very handy for a quick browse in the File Explorer. Essentially, we set Windows to recognise *.do* file as a *.txt* file, instead.
