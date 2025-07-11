@@ -213,7 +213,9 @@ To customise your user key bindings file, refer to the example keymap file (In t
 
 ## Step 4: Register in the Stata Automation type library
 
-The final step involving Stata Automation type library <https://www.stata.com/automation/#createmsapp> can be tricky. In essence, we request permission from Stata to run the code externally. I had a colleague stuck at this stage, so some screenshots are included. Here are the detailed steps:
+*Updates in Jul 2025*: You may skip this step with newer versions of Stata. If Sublime fails to launch Stata to run code, you should proceed with the step. 
+
+The final step involving Stata Automation type library <https://www.stata.com/automation/#createmsapp> can be tricky. In essence, we request permission from Stata to run the code externally. 
 
 1.  Go to where Stata.exe file is. It's usually here: `C:\Program Files (x86)\Stata14`. Right-click on the `StataMP-64.exe`, then from the drop-down menu, choose **Create shortcut** (If your computer tells you it'll be created on desktop, click on yes, and move the icon to the Stata.exe directory manually). The newly created icon is called `StataMP-64.exe - Shortcut`.
 
