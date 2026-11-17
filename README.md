@@ -1,10 +1,17 @@
+---
+
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
 ## Integrate Stata and R with Modern External Editors
 
 Stata integration resources are often out of date and scattered. Here, I bring three `modern(ish)` editors for coding. This will help you run Stata code from `modern(ish)` external editors, such as Sublime Text 4, Notepad++, and Visual Studio Code.
 
-*Updates in Nov 2023: You may use earlier versions of Sublime Text to run Stata code (tested in Windows PC). See the keymap, [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST3.sublime-keymap) for ST3 and ST4 under `SublimeText-KeyBindings` folder in the repository.
+\*Updates in Nov 2023: You may use earlier versions of Sublime Text to run Stata code (tested in Windows PC). See the keymap, [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST3.sublime-keymap) for ST3 and ST4 under `SublimeText-KeyBindings` folder in the repository.
 
-For Sublime-R integration, see a separate repository here (<https://github.com/sook-tusk/Tech_Creative_Workflow_Using_R_and_Sublime>).*
+For Sublime-R integration, see a separate repository here (<https://github.com/sook-tusk/Tech_Creative_Workflow_Using_R_and_Sublime>).\*
 
 Download Sublime Text 4 (<https://www.sublimetext.com>), Notepad++(<https://notepad-plus-plus.org/downloads/>), and Visual Studio Code (<https://code.visualstudio.com/>). Both 32 bit and 64 bit version (in Windows PC) should work. Should you experience any compatibility issues while using earlier Stata versions (e.g., Stata 14), consider the *32 bit* version. For Notepad++ and Visual Studio Code, any latest version should be fine.
 
@@ -42,7 +49,7 @@ For integration, there is an excellent resource: <https://packagecontrol.io/pack
 
 I have a light theme dedicated to run Stata code for Sublime Text 3. My customised light-theme is available in the repository.
 
-# INSTRUCTIONS BEGINE HERE
+# INSTRUCTIONS 
 
 Click on the green button, Code, and select Download ZIP. Unzip it and follow the instructions below.
 
@@ -51,6 +58,7 @@ In terms of complexity and effort for integration, Visual Studio Code may be the
 General principles are similar across platforms. The procedures for Mac users are also shown. See [for Mac users](#macusers)
 
 # In Windows :
+
 # Integration 1: Stata 18 + Notepad++
 
 ## Step 1: Install Notepad++
@@ -65,7 +73,7 @@ Two files will be placed under: `C:/yourfolder/Stata18/ado/personal/`
 
 Please create **ado** and **personal** folders as necessary. ![](image/rundolines_new.png)
 
-Open the *ini* file and customise the Stata version and path (the image above shows the settings for Stata 16). 
+Open the *ini* file and customise the Stata version and path (the image above shows the settings for Stata 16).
 
 I usually create a backup .ini file by renaming it as `rundolines_raw.ini` for future reference, while keeping the current customised version of .ini file.
 
@@ -121,7 +129,7 @@ On the left-hand side of VSCode menu, you'll see an icon for Extensions. Search 
 
 As *Code Runner* can run many programming languages, we need to ensure Stata is included in the settings. To do so, we need to open VSCode settings json file. Press F1. This triggers an empty window. This is called Command Palette. The cursor is waiting for a command. Start typing "Open User Settings (JSON)", and press enter. In settings.json file, along with other VSCode settings, include code-runner configuration as below.
 
-```py         
+``` py
       {
         "workbench.colorTheme": "One Dark Pro",
         "code-runner.executorMap": {
@@ -139,10 +147,12 @@ As *Code Runner* can run many programming languages, we need to ensure Stata is 
 As I am not planning on using other programming languages, I simplified the configuration as above.
 
 ### D. Set a shortcut key, ctrl+d.
+
 Set as `ctrl+d` to run Stata code (consistent with Sublime).
 
 In VSCode, press `F1 (or fn+F1 in laptops) > type Preferences: Open Keyboard Shortcuts (JSON)` to open the shortcut keys json file. Copy and paste the following at the end of the json file inside the square brackets, `[]`.
-```py 
+
+``` py
 [
 
   // ========= STATA =======
@@ -154,6 +164,7 @@ In VSCode, press `F1 (or fn+F1 in laptops) > type Preferences: Open Keyboard Sho
 
 ]  
 ```
+
 You may change the keyboard shortcut as you wish. Press F1 \> Open Keyboard Shortcuts \> type Run code. Change the shortcut as desired.
 
 ## Step 4: All done. Test it.
@@ -170,7 +181,7 @@ Stata windows opens up fine, but in VSCode, another Output panel pops up. As we 
 
 ## Step 1: Install Sublime Text 4
 
-Download Sublime Text 4 (<https://www.sublimetext.com>). It is not completely free but there are ways to get around. There is no fixed time period until purchase. Supporting the developers is a great idea, too. 
+Download Sublime Text 4 (<https://www.sublimetext.com>). It is not completely free but there are ways to get around. There is no fixed time period until purchase. Supporting the developers is a great idea, too.
 
 ## Step 2: Install "Stata Editor" package in Sublime Text 4
 
@@ -178,7 +189,7 @@ Check the excellent resource: <https://packagecontrol.io/packages/StataEditor> t
 
 As we did earlier with rundolines.ini file, we ensure Sublime Text recognises your Stata version and path. In Sublime Text menu, go to `Preferences > Package Settings > Stata Editor > Settings - User` to open the user customisation file. Copy below or edit as necessary.
 
-```py         
+``` py
 {
     "ensure_newline_at_eof_on_save": true,
 
@@ -207,15 +218,14 @@ As we did earlier with rundolines.ini file, we ensure Sublime Text recognises yo
 There are quite a lot of lines, but the most important thing is the path and the version of Stata. I jump between Stata versions so I disabled Stata 18 and activated Stata 14. The last line concerns colour scheme. See *Optional* stage for more detail. I disabled it for now.
 
 ## Step 3: Set shortcuts, ctrl+d
-Access key bindings file by pressing **Ctrl+Shit+P > type Preferences: Key Bindings > Enter**.
 
-To customise your user key bindings file, refer to the example keymap file (In the repository, see [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST4.sublime-keymap) for ST4 located under *SublimeText-KeyBindings* folder. 
+Access key bindings file by pressing **Ctrl+Shit+P \> type Preferences: Key Bindings \> Enter**.
+
+To customise your user key bindings file, refer to the example keymap file (In the repository, see [SublimeText-KeyBindings](SublimeText-KeyBindings/Stata-ST4.sublime-keymap) for ST4 located under *SublimeText-KeyBindings* folder.
 
 ## Step 4: Register in the Stata Automation type library
 
-*Updates in Jul 2025*: You may skip this step with newer versions of Stata. If Sublime fails to launch Stata to run code, you should proceed with the step. 
-
-The final step involving Stata Automation type library <https://www.stata.com/automation/#createmsapp> can be tricky. In essence, we request permission from Stata to run the code externally. 
+The final step involving Stata Automation type library <https://www.stata.com/automation/#createmsapp> can be tricky. In essence, we request permission from Stata to run the code externally.
 
 1.  Go to where Stata.exe file is. It's usually here: `C:\Program Files (x86)\Stata14`. Right-click on the `StataMP-64.exe`, then from the drop-down menu, choose **Create shortcut** (If your computer tells you it'll be created on desktop, click on yes, and move the icon to the Stata.exe directory manually). The newly created icon is called `StataMP-64.exe - Shortcut`.
 
@@ -233,66 +243,79 @@ Open any `do` file and test running some Stata code. Highlight the block of code
 
 ![](image/Stata_Sublime.png)
 
+*Updates in Nov 2026*: If Sublime Text 4 fails to launch Stata to run code, you could consult newer implementation methods here: <https://harningle.github.io/StataEditor>. The video tutorial may be useful. In this approach, you should add Github repository URL before installing the Stata Editor package.
+
 ## Optional: Set Colour Scheme
 
 See the sub-folder of the repository to see the Colour Scheme file and follow the instructions.
 
 ![](image/Saving_Colour_Scheme.png)
 
-
 # for Mac users <a href="macusers" id="macusers"/>
-# Integration 1: Stata + Sublime Text 4
-Download Sublime Text 4 by visiting here: https://www.sublimetext.com/
 
-In Mac, instead of Stata Editor, we need to install `Stata Improved Editor` package. One may install `Stata Enhanced` but I have not tried this package. See the detailed information here: https://packagecontrol.io/search/stata 
+# Integration 1: Stata + Sublime Text 4
+
+Download Sublime Text 4 by visiting here: <https://www.sublimetext.com/>
+
+In Mac, instead of Stata Editor, we need to install `Stata Improved Editor` package. One may install `Stata Enhanced` but I have not tried this package. See the detailed information here: <https://packagecontrol.io/search/stata>
 
 Set the shortcut by accessing the key bindings file.
-```py
+
+``` py
 // ===== Mac, Stata - ST4  =====
   {
     "keys": ["ctrl+d"], "command": "lines_to_stata"
   },
 ```
-It should work without changing any other settings in Sublime in Mac.
-Run as you'd normally do by pressing `Ctrl+d` to run Stata code. This triggers to launch Stata, and the output will be printed in Stata window. 
+
+It should work without changing any other settings in Sublime in Mac. Run as you'd normally do by pressing `Ctrl+d` to run Stata code. This triggers to launch Stata, and the output will be printed in Stata window.
+
+If Sublime Text does not communicate with Stata, check macOS permissions.
+- Click the apple icon and open System Settings on your Mac.
+- Go to Privacy & Security.
+- Select Automation.
+- Look for Sublime Text.
+- Check whether it has permission to control Stata.
+- If permission is disabled, enable it.
+- Restart both applications.
 
 # Integration 2: Stata + Visual Studio Code
 
 ## Step 1: Install VSCode extension
-  - Install `Stata Enhanced` by Kyle Barron.
 
-This extension allows Stata code highlights. 
+- Install `Stata Enhanced` by Kyle Barron.
 
-To run Stata code, we need `stataRun`.
-- Install `stataRun` by Yeaoh Media Inc.
+This extension allows Stata code highlights.
 
-You can access Extensions on the left-hand side of VSCode. Locate Extensions among major menu icons. 
+To run Stata code, we need `stataRun`. - Install `stataRun` by Yeaoh Media Inc.
+
+You can access Extensions on the left-hand side of VSCode. Locate Extensions among major menu icons.
 
 ## Step 2: Configure VSCode
+
 Press `fn+F1` (or F1). This triggers an empty window, called Command Palette. The cursor is waiting for a command. Start typing "Open User Settings (JSON)", and press enter to luanch your settings.json file.
 
-In settings.json file, add the following:
-Customise as necessary. Yours may be "stataMP".
-```json
+In settings.json file, add the following: Customise as necessary. Yours may be "stataMP".
+
+``` json
 // ============= Stata ==================
   "stataRun.whichApp": "stataIC",
 ```
 
 ## Step 3: Complete. Test running Stata code now
-Restart VSCode.
-Then, open a do file to run. Highlight a line of code. 
-To run the code, press `Cmd+Shift+S`.
-Customise the shortcut as necessary (to be updated).
-See other default shortcuts here: https://github.com/poidstotal/stataRun
 
-## Troubleshoot 
+Restart VSCode. Then, open a do file to run. Highlight a line of code. To run the code, press `Cmd+Shift+S`. Customise the shortcut as necessary (to be updated). See other default shortcuts here: <https://github.com/poidstotal/stataRun>
+
+## Troubleshoot
+
 - If a new instance of Stata window is not triggered, try restarting VSCode several times at each stage.
 
 ## Issues
-- The cursor is left in Stata window, not back in VSCode. Can look in future. 
 
+- The cursor is left in Stata window, not back in VSCode. Can look in future.
 
 # Stata Tips
+
 ## Using multiple versions of Stata
 
 You can do so! As I have two versions of Stata, I set Sublime Text 4 to run Stata 14, while Visual Studio Code interacting with Stata 18 (by editing ini file accordingly). The benefit is huge as Stata 14 lacks many options (e.g., current line highlighting, gutter-colour options, etc). Sublime Text will take care of all these.
@@ -303,51 +326,40 @@ If you are using multiple versions, it's best to place `rundolines.exe` along wi
 
 In Stata, type `sysdir`. Your default PERSONAL System directory may be:
 
-```py         
+``` py
  PERSONAL:  c:\ado\personal\
 ```
 
-I use above for Stata14. For Stata18, I use a different directory by customising as below (to avoid conflicts and issues arising from different versions of Stata. This was the case after a recent series of Windows PC updates). 
+I use above for Stata14. For Stata18, I use a different directory by customising as below (to avoid conflicts and issues arising from different versions of Stata. This was the case after a recent series of Windows PC updates).
 
-```py 
+``` py
 *===== Define custom sysdir to save ado files ========
 sysdir set PLUS     "C:\Installed_PG\Stata18\ado\plus"
 
 sysdir set PERSONAL "C:\Installed_PG\Stata18\ado\personal"
 ```
 
-To make the change permanently, define the customised path in the  [profile.do](profile/profile.do)).
-The `profile.do` file can be placed under `C:Installed_PG\Stata18`. You'll see whenever Stata 18 is launched, Stata will look for profile.do and run the code in the profile.do.
+To make the change permanently, define the customised path in the [profile.do](profile/profile.do)). The `profile.do` file can be placed under `C:Installed_PG\Stata18`. You'll see whenever Stata 18 is launched, Stata will look for profile.do and run the code in the profile.do.
 
 # Enable preview for a Stata Do file in Windows File Explorer
+
 This feature can be very handy for a quick browse in the File Explorer. Essentially, we set Windows to recognise *.do* file as a *.txt* file, instead.
 
-1. In the search bar (located at the bottom left of Windows PC),
-type *Reg* to launch Registry Editor.
+1.  In the search bar (located at the bottom left of Windows PC), type *Reg* to launch Registry Editor.
 
-2. Look for the extension, .do
+2.  Look for the extension, .do
 
-   You'll see file extensions under:
-> Computer\HKEY_CLASSES_ROOT\.do
+    You'll see file extensions under: \> Computer\HKEY\_CLASSES_ROOT.do
 
-3. On the right-hand pane, do the following:
-   right-click > New > String value
-![](image/Preview/new_stringvalue.png)
+3.  On the right-hand pane, do the following: right-click \> New \> String value ![](image/Preview/new_stringvalue.png)
 
-4. From the default, *New Value #1*,
-   we rename it as **PerceivedType**.
-![](image/Preview/new_value_default.png)
+4.  From the default, *New Value #1*, we rename it as **PerceivedType**. ![](image/Preview/new_value_default.png)
 
-5. Now, click on **PerceivedType** to
-bring up **Modify**... menu.
-![](image/Preview/perceivedtype.png)
+5.  Now, click on **PerceivedType** to bring up **Modify**... menu. ![](image/Preview/perceivedtype.png)
 
-      In the Value data: type *text*.
-![](image/Preview/set_as_text.png)
+    In the Value data: type *text*. ![](image/Preview/set_as_text.png)
 
-6. Finally, return to the file explorer and
-hover over a do file. The preview pane should display the Stata code.
-![](image/Preview/do_preview.png)
+6.  Finally, return to the file explorer and hover over a do file. The preview pane should display the Stata code. ![](image/Preview/do_preview.png)
 
 If this feature stops working after Windows updates, you may need to repeat this process.
 
@@ -357,5 +369,4 @@ Note that syntax highlighting is not supported, and it works with a *personal* W
 
 Huebler (2011). Friedrich Huebler's blog <https://huebler.blogspot.com/2008/04/stata.html>
 
-Thank you for reading. I hope it helps with your Stata workflow, and ongoing project management! 
-
+Thank you for reading. I hope it helps with your Stata workflow, and ongoing project management!
