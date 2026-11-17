@@ -1,10 +1,3 @@
----
-
-editor_options: 
-  markdown: 
-    wrap: sentence
----
-
 ## Integrate Stata and R with Modern External Editors
 
 Stata integration resources are often out of date and scattered. Here, I bring three `modern(ish)` editors for coding. This will help you run Stata code from `modern(ish)` external editors, such as Sublime Text 4, Notepad++, and Visual Studio Code.
